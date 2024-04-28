@@ -6,6 +6,7 @@
 	--primary: #FFF8FB;
 	--secondary: #F5F5F5;
 	--text: #333;
+	--text: #3C2622;
 }
 
 /* #FFF8FB #F5F5F5 #333*/
@@ -18,19 +19,137 @@
 	padding: 0;
 }
 
+html, body {
+	scroll-behavior: smooth;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1100px;
+	margin-inline: auto;
+	overflow: hidden;
+	border: 1px solid black;
+	min-height: 100vh;
+}
+
 img {
 	width: 100%;
 	object-fit: cover;
 }
 
-/*body {
-	margin: 0;
-	padding: 0;
-}*/
 
 body {
 	background: var(--primary);
+	color: var(--text);
 }
+
+section {
+	border: 2px dashed red;
+	min-height: 100vh;
+}
+
+
+/*......hero style.....*/
+
+
+
+.hero__text {
+	max-width: 300px;
+	margin-inline: auto;
+	border:2px dashed blue;
+	text-align: center;
+	padding: 3rem 1.5rem;
+}
+
+.hero__title {
+	font-size: 2.5rem;
+}
+
+
+.hero__search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border:1px solid green;
+   	padding: 4rem;
+   	max-width: 600px;
+   	margin-inline: auto;
+}
+
+.hero__img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    /*height: 200px;*/
+    width: 200px;
+    border: 2px dashed yellow;
+}
+
+
+.search__container {
+	position: relative;
+	height: 50px;
+}
+
+input[type="text"] {
+	background: #fff;
+   /* border: 1px solid var(--text);*/
+   /*border:0;*/
+    border-radius: 20px;
+    padding: 10px;
+    /*padding: 10px 40px 10px 20px;*/
+    height: 50px;
+    width: 50px;
+    font-size: 1.3rem;
+   /* min-width: 150px;*/
+    z-index: 99;
+    margin-left: 3.5rem;
+    transition: width 0.3s ease;
+}
+
+
+
+.search__btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	font-size: 1.3rem;
+	background: var(--text);
+	border: 0;
+	color: #fff;
+	margin-left: 3.5rem;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.search__btn i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search__container.active .search__input {
+	width: 200px;
+}
+
+.search__container.active .search__btn {
+	transform: translateX(198px);
+}
+
+
+
+
+
+/*......hero style end.....*/
+
+
+
+
+
 
 .card {
 	width: 250px;
