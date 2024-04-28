@@ -1,0 +1,38 @@
+@import "reset.css";
+
+/*.................*/
+
+:root {
+	--primary: #FFF8FB;
+	--secondary: #F5F5F5;
+	--text: #333;
+}
+
+/* #FFF8FB #F5F5F5 #333*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+	padding: 0;
+}
+
+img {
+	width: 100%;
+	object-fit: cover;
+}
+
+/*body {
+	margin: 0;
+	padding: 0;
+}*/
+
+body {
+	background: var(--primary);
+}
+
+.card {
+	width: 250px;
+	background: var(--secondary);
+}
