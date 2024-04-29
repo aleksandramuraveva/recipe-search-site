@@ -35,6 +35,7 @@ html, body {
 img {
 	width: 100%;
 	object-fit: cover;
+	object-position: 50%;
 }
 
 
@@ -44,19 +45,19 @@ body {
 }
 
 section {
-	border: 2px dashed red;
+	border: 3px dashed red;
 	min-height: 100vh;
 }
 
 
-/*......hero style.....*/
+/*......hero section style.....*/
 
 
 
 .hero__text {
 	max-width: 300px;
 	margin-inline: auto;
-	border:2px dashed blue;
+	/*border:2px dashed blue*/;
 	text-align: center;
 	padding: 3rem 1.5rem;
 }
@@ -70,7 +71,7 @@ section {
     display: flex;
     align-items: center;
     position: relative;
-    border:1px solid green;
+    /*border:1px solid green*/;
    	padding: 4rem;
    	max-width: 600px;
    	margin-inline: auto;
@@ -83,7 +84,17 @@ section {
     transform: translateY(-50%);
     /*height: 200px;*/
     width: 200px;
-    border: 2px dashed yellow;
+    /*border: 1.5px dashed yellow;*/
+}
+
+.hero__img2 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    /*height: 200px;*/
+    width: 200px;
+    /*border: 1.5px dashed yellow;*/
 }
 
 
@@ -126,6 +137,8 @@ input[type="text"] {
 	transition: transform 0.3s ease;
 }
 
+
+
 .search__btn i {
     display: flex;
     justify-content: center;
@@ -141,17 +154,113 @@ input[type="text"] {
 }
 
 
+/*......hero section style ends.....*/
 
 
+/*......recipes section style.....*/
 
-/*......hero style end.....*/
+.recipes {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
+}
 
-
-
-
+.grid-container {
+	/*position: relative;*/
+	width: 1000px;
+	/*margin-inline: auto;*/
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	background: lavender;
+}
 
 .card {
-	width: 250px;
+	/*position: relative;*/
+	display: flex;
+	flex-direction: column;
 	background: var(--secondary);
+	border: 2px solid purple;
 }
+
+.card:nth-child(even) {
+	flex-direction: column-reverse;
+}
+
+.card__img {
+	/*position: relative;*/
+	width: 250px;
+	height: 250px;
+}
+
+.card__img img {
+/*	position: absolute;*/
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card__content {
+	width: 250px;
+	height: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid green;
+}
+
+.card__text {
+	/*width: 100%;*/
+	padding: 0.8rem;
+	text-align: center;
+}
+
+/*......recipes section style ends.....*/
+
+
+/*...MEDIA QUERIES...*/
+@media (max-width: 1000px) {
+	.grid-container {
+		grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+	}
+
+	.card {
+		flex-direction: row;
+		margin: 0.5rem 0;
+	}
+
+	.card:nth-child(even){
+		flex-direction: row-reverse;
+	}
+
+	.card__img,
+	.card__content {
+		width: 50%;
+	}
+
+}
+
+@media (max-width: 600px) {
+	.card {
+		flex-direction: column;
+	}
+
+	.card:nth-child(even){
+		flex-direction: column;
+	}
+
+	.card__img,
+	.card__content {
+		width: 100%;
+	}
+
+	.card__content {
+		/*height: 200px;*/
+	}
+
+
+}
+
+
+
+
